@@ -1,0 +1,43 @@
+<html xmlns="https://www.thymeleaf.org/">
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="bg-info text-white text-center">WELCOME TO USER REGISTRATION</h2>
+        <form th:action="@{/user/register}" method="POST">
+            <table class="table table-hover text-center">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="uname"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td>Roles</td>
+                    <td><input type="checkbox" name="roles" value="User" checked>User
+                        <input type="checkbox" name="roles" value="Manager">Manager
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <button type="submit" value="Submit" class="btn btn-warning">SUBMIT</button>
+                        <button type="reset" value="Clear" class="btn btn-danger">CLEAR</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    	<div class="bg-success text-white text-center" th:text="${message}"></div>
+    	<br>
+    	<br><br>
+    	<h6 class="text-center">ALREADY REGISTER! <a th:href="@{/user/showLogin}">CLICK HERE TO LOGIN</a></h6>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<title>welcome to login page</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2 class="bg-info text-white text-center">USER LOGIN PAGE</h2>
+		<form th:action="@{/login}" method="POST">
+			<table class="table table-hover text-center">
+				<tr>
+					<td>USERNAME</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>PASSWORD</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button class="btn bg-warning text-white " type="submit" value="SUBMIT">SUBMIT</button>
+					&nbsp;<button class="btn bg-danger text-white" type="reset" value="RESET">CLEAR</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<h6 class="text-center"><span th:if="${param.error}">INVALIDE CREADENTIALS!</span></h6>
+		<h6 class="text-center"><span th:if="${param.logout}">LOGOUT SUCCUSSFULLY!</span></h6>
+		<br><br>
+		<h6 class="text-center"><a th:href="@{/user/register}">CLICK HERE TO REGISTER</a></h6>
+	</div>
+</body>
+
+</html>

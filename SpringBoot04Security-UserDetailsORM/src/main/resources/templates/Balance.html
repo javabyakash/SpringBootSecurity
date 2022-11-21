@@ -1,0 +1,19 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<title>welcome to balance page</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<body>
+	<div class="container">
+		<h1 class="bg-danger text-white text-center">WELCOME TO HDFC BANK</h1>
+		<br><br>
+		<h4 class="bg-info text-white text-center">AVAILABLE BALANCE : <span th:text="${balance}"></h4>
+		<br>
+		<br>
+		<h6 class="text-center"><a th:href="@{/bank/}">BACK TO HOME</h6>
+		<h6 class="text-center"><a th:href="@{/signout}">LOGOUT</a></h6>
+	</div>
+</body>
+
+</html>
